@@ -12,7 +12,16 @@ spring:
           uri: https://github.com/ahyahya1616/config-repo-estate-rental
           default-label: main
           clone-on-start: true
-eureka:
-  client:
-    register-with-eureka: false
-    fetch-registry: false
+#eureka:
+#  client:
+#    register-with-eureka: false
+#    fetch-registry: false
+
+
+logging:
+  level:
+    root: ERROR  # tout ce qui n'est pas explicitement configuré ne log que les erreurs
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
+    ma.fstt.authserver: DEBUG  # détail des erreurs internes ici
+    feign: ERROR
