@@ -25,3 +25,12 @@ logging:
     org.springframework.security.oauth2: DEBUG
     ma.fstt.authserver: DEBUG  # détail des erreurs internes ici
     feign: ERROR
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus,env,refresh
+  security:
+    enabled: false
