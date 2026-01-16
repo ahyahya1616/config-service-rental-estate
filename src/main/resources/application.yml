@@ -9,14 +9,9 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/ahyahya1616/config-repo-estate-rental
+          uri: https://github.com/RealEstate-Rental-Project/config-repo-estate-rental.git
           default-label: main
           clone-on-start: true
-#eureka:
-#  client:
-#    register-with-eureka: false
-#    fetch-registry: false
-
 
 logging:
   level:
@@ -25,3 +20,15 @@ logging:
     org.springframework.security.oauth2: DEBUG
     ma.fstt.authserver: DEBUG  # détail des erreurs internes ici
     feign: ERROR
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus,env,refresh
+  endpoint:
+    prometheus:
+      enabled: true
+  security:
+    enabled: false
