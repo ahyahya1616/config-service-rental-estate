@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: config-service
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: config-service
+  template:
+    metadata:
+      labels:
+        app: config-service
+    spec:
+      containers:
+        - name: config-service
+          image: config-service:1.0.0
+          ports:
+            - containerPort: 8888
+          env:
+            - name: CONFIG_REPO_URI
+              valueFrom:
+                configMapKeyRef:
+                  name: config-service-config
+                  key: CONFIG_REPO_URI
