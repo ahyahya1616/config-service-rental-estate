@@ -2,7 +2,5 @@
 
 springBootKindPipeline(
         serviceName: 'config-service',
-        imageName: 'config-service',
-        jarName: 'config-service.jar',
-        port: '8888'
+        imageName: 'config-service'
 )
