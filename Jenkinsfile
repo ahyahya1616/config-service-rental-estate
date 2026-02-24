@@ -1,7 +1,8 @@
-@Library('jenkins-shared-library') _
+@Library('estate-rental-shared-library') _
 
-standardBackendPipeline(
-    appName: 'config-service',
-    registry: 'yassinekamouss',
-     sonarProjectKey: 'config-service'
+springBootKindPipeline(
+        serviceName: 'config-service',
+        imageName: 'config-service',
+        jarName: 'config-service.jar',
+        port: '8888'
 )
